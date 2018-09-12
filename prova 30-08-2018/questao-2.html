@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão</title>
+</head>
+<body>
+    
+    <div class="box">
+        <div>
+            <h1>Banco Tário - Novo Correntista</h1>
+
+            <ul style="list-style: none;">
+                <li><p>Correntista: <b style="color: #F00;" >R$<span id="name_correntista"></span></b></p></li>
+                <li><p>Valor Inicial da Conta: <b style="color: #0F0;">R$<span id="vl_inicial"></span></b></p></li>
+                <li><p>Investimento Mensal: <b style="color: #00F;">R$<span id="vl_mensal"></span></b></p></li>
+            </ul>
+        </div>
+    </div>
+
+
+</body>
+</html>
+<script>
+
+    var nome = prompt("Olá para abrir a conta eu gostaria de saber seu nome?");
+    var vl_inicial = prompt("Qual seria o valor inicial para sua conta? ");
+    var vl_mensal = prompt("Quanto você iria investir mensalmente? ");
+
+
+    document.getElementById("name_correntista").innerHTML = nome;
+    document.getElementById("vl_inicial").innerHTML = vl_inicial;
+    document.getElementById("vl_mensal").innerHTML = vl_mensal;
+
+</script>

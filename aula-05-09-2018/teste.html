@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .name{
+            color: #0F0;
+            text-decoration: underline;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <ul>
+            <li><p>Nome Completo <span id="name_user"></span></p></li>
+            <li><p>Idade <span id="idade_user"></span></p></li>
+            <li><p>Cidade de: <span id="city_user"></span></p></li>
+            <li><p>Informe Seu CEP: <span id="cep_user"></span></p></li>
+        </ul>
+    </div>
+
+
+    <label for="">Informe Sua Cidade</label><br>
+    <input type="text" id="city" /><br><br>
+
+    <label for="">Informe Seu CEP</label><br>
+    <input type="text" id="cep" /><br><br>
+
+    <button onclick="cityfun();">Cadastre Sua Cidade</button><br><br>
+</body>
+</html>
+<script>
+
+    var name = prompt("Informe seu nome completo");
+    var idade = prompt("Informe sua idade");
+
+    
+
+    document.writeln(`Olá <b class="name">${name}</b>, tudo bem. Você tem <b class = "name">${idade}</b><br>`);
+
+    document.getElementById("name_user").innerHTML = name;
+    document.getElementById("idade_user").innerHTML = idade;
+
+    function cityfun(){
+
+        var city = document.getElementById("city").value;
+        var cep = document.getElementById("cep").value;
+
+        document.getElementById("city_user").innerHTML = city;
+        document.getElementById("cep_user").innerHTML = cep;
+    }
+
+    
+
+</script>

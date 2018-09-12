@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Juliana Paixonada</title>
+</head>
+<body>
+
+    <label for="">Quantos Beijos você deu Hoje</label> <input id="bjs_number" /><br><br>
+    <label for="">Quantas Horas de Malhação</label> <input id="hrs_malhacao" /><br><br>
+
+    <button onclick="perda();">Descobrir perda calórica</button>
+
+    <h1>Calorias Perdidas Hoje</h1><br>
+    <p><b>Beijos:</b> <span id="total_bjs"></span> - Calorias 20 x <span id="total_bjs"></span> = <span id="bjs_calorias"></span></p>
+    <p><b>Malhação:</b> - <span id="total_horas"></span> Horas - Calorias 150 x <span id="total_de_horas"></span> = <span id="tot_mlh"></span></p>
+    <p><b>Total de Hoje:</b> <u><b id="perca_daria"></b></u> calorias </p>
+
+    <h1>Calorias perdidas nesse ritmo</h1>
+
+    <p>Em <b>1 semana</b>: <span id="perca_semana"></span> x 7 = <span id="total_semana"></span></p>
+    <p>Em <b>1 mês</b>: <span id="perca_mes"></span> x 30 = <span id="total_mes"></span></p>
+
+</body>
+</html>
+<script>
+
+    function perda(){
+        var qtd_bj = Number( document.getElementById("bjs_number").value);
+        var qtd_mlh = Number(document.getElementById("hrs_malhacao").value);
+
+        var total_bjs =  qtd_bj * 20;
+        var total_mlh =  qtd_mlh * 150 ;
+
+        var total_dia = total_bjs + total_mlh;
+
+        var tot_semana = total_dia * 7;
+        var tot_mes = total_dia * 30;
+
+        document.getElementById("total_bjs").innerHTML = qtd_bj;
+        document.getElementById("bjs_calorias").innerHTML = total_bjs;
+        document.getElementById("total_horas").innerHTML = qtd_mlh;
+        document.getElementById("total_de_horas").innerHTML = qtd_mlh;
+        document.getElementById("tot_mlh").innerHTML = total_mlh;
+        document.getElementById("perca_daria").innerHTML = total_dia;
+        document.getElementById("perca_semana").innerHTML = total_dia;
+        document.getElementById("perca_mes").innerHTML = total_dia;
+        document.getElementById("total_semana").innerHTML = tot_semana;
+        document.getElementById("total_mes").innerHTML = tot_mes;
+    }
+
+
+</script>

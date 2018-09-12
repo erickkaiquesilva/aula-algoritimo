@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Questão 3</title>
+</head>
+<body>
+    
+    <label for="">Qual o nome do Personagem</label><br>
+    <input type="text" id="name_pers"><br><br>
+
+    <label for="">Primeira Caracteristica do Personagem</label><br>
+    <input type="text" id="cara_um"><br><br>
+
+    <label for="">Segunda Caracteristica do Personagem</label><br>
+    <input type="text" id="cara_dois"><br><br>
+    
+    <label for="">Terceira Caracteristica do Personagem</label><br>
+    <input type="text" id="cara_tres"><br><br>
+
+    <button onclick="caracteristica();">Descrever Personagem</button>
+
+    <p>Nas <u>Crônicas de Nárnia</u>, o(a) personagem <b><span id="nome_person"></span></b> é sensacional por é:</p>
+    
+    <ol>
+        <li><b><span id="car_um" style="color: #00f"></span></b></li>
+        <li><u><span id="car_dois" style="color: #0f0"></span></u></li>
+        <li><i><span id="car_tres" style="color: #f00"></span></i></li>
+    </ol>
+
+</body>
+</html>
+
+<script>
+ 
+    function caracteristica(){
+
+        var name_pers = document.getElementById("name_pers").value;
+        var cara_um = document.getElementById("cara_um").value;
+        var cara_dois = document.getElementById("cara_dois").value;
+        var cara_tres = document.getElementById("cara_tres").value;
+
+        document.getElementById("nome_person").innerHTML = name_pers;
+        document.getElementById("car_um").innerHTML = cara_um;
+        document.getElementById("car_dois").innerHTML = cara_dois;
+        document.getElementById("car_tres").innerHTML = cara_tres;
+
+    }
+
+
+</script>

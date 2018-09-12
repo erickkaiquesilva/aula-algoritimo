@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fechamento de Comanda</title>
+</head>
+<body>
+    
+    <h1>Fechamento de Comanda</h1>
+
+    <h3>Produto 1</h3>
+    <label for="">Produto</label><br>
+    <input id="prod_1"><br>
+    <label for="">Valor Unitário</label><br>
+    <input id="var_unid_prod_1"><br>
+    <label for="">Quantidade</label><br>
+    <input id="qtd_prod_1"><br><br>
+
+    <h3>Produto 2</h3>
+    <label for="">Produto</label><br>
+    <input id="prod_2"><br>
+    <label for="">Valor Unitário</label><br>
+    <input id="var_unid_prod_2"><br>
+    <label for="">Quantidade</label><br>
+    <input id="qtd_prod_2"><br><br>
+
+    <h3>Produto 3</h3>
+    <label for="">Produto</label><br>
+    <input id="prod_3"><br>
+    <label for="">Valor Unitário</label><br>
+    <input id="var_unid_prod_3"><br>
+    <label for="">Quantidade</label><br>
+    <input id="qtd_prod_3"><br><br>
+
+    <h3>Produto 4</h3>
+    <label for="">Produto</label><br>
+    <input id="prod_4"><br>
+    <label for="">Valor Unitário</label><br>
+    <input id="var_unid_prod_4"><br>
+    <label for="">Quantidade</label><br>
+    <input id="qtd_prod_4"><br><br>
+
+    <button onclick="calculo_comanda();">Calcular Conta</button>
+
+    <div>
+        <h1>Recibo Comanda</h1>
+
+        <ol>
+            <li><p><span id="name_prod_1"></span>. <span>R$ <span id="vlt_prod_1"></span></span> x <span id="quantidade_prod_1"></span> - <b id="total_prod_1"></b></p></li>
+            <li><p><span id="name_prod_2"></span>. <span>R$ <span id="vlt_prod_2"></span></span> x <span id="quantidade_prod_2"></span> - <b id="total_prod_2"></b></p></li>
+            <li><p><span id="name_prod_3"></span>. <span>R$ <span id="vlt_prod_3"></span></span> x <span id="quantidade_prod_3"></span> - <b id="total_prod_3"></b></p></li>
+            <li><p><span id="name_prod_4"></span>. <span>R$ <span id="vlt_prod_4"></span></span> x <span id="quantidade_prod_4"></span> - <b id="total_prod_4"></b></p></li>
+        </ol>
+
+        <u><b><p>Total: <span id="total_comanda"></span></p></b></u>
+    </div>
+
+</body>
+</html>
+<script>
+
+    function calculo_comanda(){
+
+        var name_prod_1 = document.getElementById("prod_1").value;
+        var vlt_prod_1 = document.getElementById("var_unid_prod_1").value;
+        var qtd_prod_1 = document.getElementById("qtd_prod_1").value;
+
+        var name_prod_2 = document.getElementById("prod_2").value;
+        var vlt_prod_2 = document.getElementById("var_unid_prod_2").value;
+        var qtd_prod_2 = document.getElementById("qtd_prod_2").value;
+
+        var name_prod_3 = document.getElementById("prod_3").value;
+        var vlt_prod_3 = document.getElementById("var_unid_prod_3").value;
+        var qtd_prod_3 = document.getElementById("qtd_prod_3").value;
+
+        var name_prod_4 = document.getElementById("prod_4").value;
+        var vlt_prod_4 = document.getElementById("var_unid_prod_4").value;
+        var qtd_prod_4 = document.getElementById("qtd_prod_4").value;
+
+        var calc_prod_1 = vlt_prod_1 * qtd_prod_1;
+        var calc_prod_2 = vlt_prod_2 * qtd_prod_2;
+        var calc_prod_3 = vlt_prod_3 * qtd_prod_3;
+        var calc_prod_4 = vlt_prod_4 * qtd_prod_4;
+        
+        var total_comanda = calc_prod_1 + calc_prod_2 + calc_prod_3 + calc_prod_4;
+        
+        calc_prod_1 = calc_prod_1.toFixed(2);
+        calc_prod_2 = calc_prod_2.toFixed(2);
+        calc_prod_3 = calc_prod_3.toFixed(2);
+        calc_prod_4 = calc_prod_4.toFixed(2);
+        total_comanda = total_comanda.toFixed(2);
+
+
+
+        document.getElementById("name_prod_1").innerHTML = name_prod_1;
+        document.getElementById("quantidade_prod_1").innerHTML = qtd_prod_1;
+        document.getElementById("vlt_prod_1").innerHTML = vlt_prod_1;
+        document.getElementById("total_prod_1").innerHTML = calc_prod_1;
+
+        document.getElementById("name_prod_2").innerHTML = name_prod_2;
+        document.getElementById("quantidade_prod_2").innerHTML = qtd_prod_2;
+        document.getElementById("vlt_prod_2").innerHTML = vlt_prod_2;
+        document.getElementById("total_prod_2").innerHTML = calc_prod_2;
+
+        document.getElementById("name_prod_3").innerHTML = name_prod_3;
+        document.getElementById("quantidade_prod_3").innerHTML = qtd_prod_3;
+        document.getElementById("vlt_prod_3").innerHTML = vlt_prod_3;
+        document.getElementById("total_prod_3").innerHTML = calc_prod_3;
+
+        document.getElementById("name_prod_4").innerHTML = name_prod_4;
+        document.getElementById("quantidade_prod_4").innerHTML = qtd_prod_4;
+        document.getElementById("vlt_prod_4").innerHTML = vlt_prod_4;
+        document.getElementById("total_prod_4").innerHTML = calc_prod_4;
+
+        document.getElementById("total_comanda").innerHTML = total_comanda;
+
+    }
+
+    
+    
+
+
+</script>
