@@ -1,0 +1,116 @@
+*{
+    margin: 0 auto;
+    padding: 0px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+}
+.container{
+    position: relative;
+    width: 100%;
+    max-width: 1024px;
+    background: #f7f7f7;
+}
+.box_preenchimento{
+    width: 50%;
+    max-width: 512px;
+    margin: 10px 0px;
+    float: left;
+}
+.cabecalho-inicial h1{
+    font-size: 2.5em;
+    border-bottom: 3px double #ce161d;
+}
+.form-preenchimento{
+    padding: 10px;
+}
+.form-preenchimento label{
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #444;
+    padding: 10px 0px;
+}
+.form-preenchimento .inputs{
+    width: 100%;
+    max-width: 300px;
+    height: 35px;
+    margin: 10px 0px;
+    border-radius: 7px;
+    border: 1px solid #DDD;
+    outline: none;
+    padding: 4px;
+    font-size: 1em;
+    transition: all ease 0.4s;
+}
+.form-preenchimento .btn{
+    width: 100%;
+    height: 40px;
+    background: #FFF;
+    border-radius: 7px;
+    border: 2px solid #25eb98;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #25eb98;
+    cursor: pointer;
+    outline: none;
+}
+.box-boletim{
+    float: right;
+    width: 50%;
+    max-width: 490px;
+    margin: 10px 0px;
+}
+.box-boletim h1{
+    font-size: 2.5em;
+    border-bottom: 3px double;
+}
+.box-boletim{
+    float: right;
+    width: 50%;
+    max-width: 490px;
+    margin: 10px 0px;
+}
+.box-boletim h1{
+    font-size: 2.5em;
+    border-bottom: 3px dou
+}
+.box-boletim{
+    float: right;
+    width: 50%;
+    max-width: 490px;
+    margin: 10px 0px;
+}
+.box-boletim h1{
+    font-size: 2.5em;
+    border-bottom: 3px dou
+}
+.form-preenchimento .inputs:focus{
+    font-weight: bold;
+    max-width: 350px;
+    border: 1px solid #25eb98;
+}
+.box-boletim{
+    float: right;
+    width: 50%;
+    max-width: 490px;
+    margin: 10px 0px;
+}
+.box-boletim h1{
+    font-size: 2.5em;
+    border-bottom: 3px double #444;
+}
+.box-boletim .info-boletim{
+    margin-top: 10px;
+}
+.info-boletim li{
+    margin: 15px 0px;
+}
+.info-boletim .informacoes{
+    font-size: 1.3em;
+    color: #444;
+}
+.status-aluno{
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}

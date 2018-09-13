@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boletim</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,700" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <div class="box_preenchimento">
+                <div class="cabecalho-inicial">
+                        <h1>Calculo de Notas Alunos</h1>
+                    </div>
+                    <div class="form-preenchimento">
+                        <label for="">Nome do Aluno</label><br>
+                        <input class="inputs" type="text" id="name_aluno"><br><br>
+            
+                        <label for="">Matéria</label><br>
+                        <select class="inputs" name="" id="materias_aluno">
+                            <option value="">Selecione</option>
+                            <option value="Analise e Desenvolvimento de Sistemas">Análise e Desenvolvimento de Sistemas</option>
+                            <option value="Banco de Dados">Banco de Dados</option>
+                            <option value="Redes de Computadores">Redes de Computadores</option>
+                            <option value="Jogos Digitais">Jogos Digitais</option>
+                        </select><br><br>
+            
+                        <label for="">Nome do Professor</label><br>
+                        <input class="inputs" type="text" id="name_professor"><br><br>
+            
+                        <label for="">Nota 1</label><br>
+                        <input class="inputs" type="text" id="nota_um"><br><br>
+                        
+                        <label for="">Nota 2</label><br>
+                        <input class="inputs" type="text" id="nota_dois"><br><br>
+            
+                        <label for="">Nota 3</label><br>
+                        <input class="inputs" type="text" id="nota_tres"><br><br>
+            
+                        <label for="">Nota 4</label><br>
+                        <input class="inputs" type="text" id="nota_quatro"><br><br>
+                        
+                        <button class="btn" onclick="alunoMedia();">Registrar Média Aluno</button>
+                    </div>
+        </div>
+        <div class="box-boletim">
+            <h1>Boletim</h1>
+
+            <div class="info-boletim">
+                <ul>
+                    <li><span class="informacoes">Aluno:</span> <span id="nome-aluno"></span></li>
+                    <li><span class="informacoes">Materia:</span> <span id="materia-aluno"></span></li>
+                    <li><span class="informacoes">Nome do Professor:</span> <span id="nome-professor"></span></li>
+                    <li><span class="informacoes">Nota 1:</span> <span id="nota-um"></span></li>
+                    <li><span class="informacoes">Nota 2:</span> <span id="nota-dois"></span></li>
+                    <li><span class="informacoes">Nota 3:</span> <span id="nota-tres"></span></li>
+                    <li><span class="informacoes">Nota 4:</span> <span id="nota-quatro"></span></li>
+                    <li><span class="informacoes">Media:</span> <span id="media"></span></li>
+                </ul>
+            </div>
+
+            <div class="status-aluno" id="status_aluno" style="display: none;">
+                    <h2>Você Está <span id="status-situacao"></span></h2><br>
+                    <p><span id="n-aluno"></span></p>
+            </div>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
+<script>
+    
+    function alunoMedia(){
+
+        var name_aluno = document.getElementById("name_aluno").value; 
+        var mat_aluno = document.getElementById("materias_aluno").value; 
+        var name_teacher = document.getElementById("name_professor").value; 
+        var nota_um = Number(document.getElementById("nota_um").value); 
+        var nota_dois = Number(document.getElementById("nota_dois").value); 
+        var nota_tres = Number(document.getElementById("nota_tres").value); 
+        var nota_quatro = Number(document.getElementById("nota_quatro").value);
+        var media = null;
+
+
+        media = (nota_um + nota_dois + nota_tres + nota_quatro) / 4;
+
+        document.getElementById("media").innerHTML = media;
+        
+        if( media < 5){
+            
+            var msg = "Reprovado";
+            var msg_dois = `Estude mais e Brinque menos ${name_aluno}`;
+
+            document.getElementById("status-situacao").innerHTML = msg;
+            document.getElementById("n-aluno").innerHTML = msg_dois;
+            document.getElementById("status_aluno").style.background = '#ce161d';
+            document.getElementById("status_aluno").style.display = 'block';
+            
+
+        }
+
+    }
+
+
+</script>
