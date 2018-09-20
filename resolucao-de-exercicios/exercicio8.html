@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    
+    <label for="">Informe a Temperatura do Ambiente</label><br>
+    <input type="text" id="temp"><br><br>
+
+    <button onclick="verifica_temp();">Verificar Temperatura</button>
+
+</body>
+</html>
+<script>
+
+    function verifica_temp(){
+        var temp = Number(document.getElementById("temp").value);
+
+        if(temp < 20 || temp > 25){
+            var msg = `Atenção! Temperatura ${temp}ºC é desconfortável!`;
+            alert(msg);
+        }else{
+            console.log(temp);
+        }
+    }
+
+</script>

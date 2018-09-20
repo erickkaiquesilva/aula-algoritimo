@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+    <label for="">Frequencia</label><br>
+    <input type="text" id="frequencia"><br><br>
+
+    <label for="">Media</label><br>
+    <input type="text" id="media"><br><br>
+
+    <button onclick="verifica();">Verificar Situação</button>
+
+
+</body>
+</html>
+
+<script>
+
+    function verifica(){
+        var freq = Number(document.getElementById("frequencia").value);
+        var media = Number(document.getElementById("media").value);
+
+
+        if(freq < 0 || freq > 100 || media < 0 || media > 10){
+            alert("OPS!!!, A Frequencia Informada ou Media é invalida");
+        }else if(media >= 7 && freq >= 75){
+            alert("Parabéns O aluninho esta APROVADO!!!");
+        }else{
+            alert("#deuruim... Aluno Reprovado");
+        }
+    }
+
+
+</script>

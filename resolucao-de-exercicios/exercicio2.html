@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    
+    <label for="">Quanto Você tem</label><br>
+    <input type="text" id="vlr-carteira"><br><br>
+    
+    <label for="">Quanto Custa a Pizza</label><br>
+    <input type="text" id="vlr-pizza"><br><br>
+
+    <button onclick="comparar();">Dá para Pedir</button>
+
+    <div>
+        <p id="msg"></p>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function comparar() {
+        var vlr_meu = Number(document.getElementById("vlr-carteira").value);
+        var vlr_pizza = Number(document.getElementById("vlr-pizza").value);
+
+        var sobra = vlr_meu - vlr_pizza;
+
+
+        if(vlr_meu >= vlr_pizza){
+            var msg = `Você pode pedir a pizza, e ainda lhe sobra ${sobra}`;
+
+            document.getElementById("msg").innerHTML = msg;
+        }else{
+            var msg = `A iFood vai te entregar a pizza pelo valor que você tem. <i>É verdade esse bilete</i>`;
+            document.getElementById("msg").innerHTML = msg;
+        }
+    }
+
+
+</script>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 3</title>
+</head>
+
+<body>
+
+    <label for="">Nome Primeiro Time</label>
+    <br>
+    <input type="text" id="one-time-name">
+    <br>
+    <br>
+
+    <label for="">Quantidade de Mundiais</label>
+    <br>
+    <input type="text" id="one-time-cups">
+    <br>
+    <br>
+
+    <label for="">Nome Segundo Time</label>
+    <br>
+    <input type="text" id="two-time-name">
+    <br>
+    <br>
+
+    <label for="">Quantidades de Mundiais</label>
+    <br>
+    <input type="text" id="two-time-cups">
+    <br>
+    <br>
+
+    <button onclick="comparar();">Comparar Times</button>
+
+    <div>
+        <p id="msg"></p>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function comparar() {
+
+
+        var name_time_one = document.getElementById("one-time-name").value;
+        var cups_time_one = Number(document.getElementById("one-time-cups").value);
+        var name_time_two = document.getElementById("two-time-name").value;
+        var cups_time_two = Number(document.getElementById("two-time-cups").value);
+
+
+        if(cups_time_one > cups_time_two){
+            
+            var msg = `O ${name_time_one} é melhor que o ${name_time_two} porque ele tem ${cups_time_one} títulos mundiais contra ${cups_time_two}.`;
+            document.getElementById("msg").innerHTML = msg;
+
+        }else if(cups_time_two > cups_time_one){
+            var msg = `O ${name_time_two} é melhor que o ${name_time_one} porque ele tem ${cups_time_two} títulos mundiais contra ${cups_time_one}.`;
+            document.getElementById("msg").innerHTML = msg;
+        }else{
+            var msg = `Os times se equivalem. Pode torcer para qualquer um.`;
+            document.getElementById("msg").innerHTML = msg;
+        }
+
+        
+        
+    }
+
+</script>

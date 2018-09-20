@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 5</title>
+</head>
+<body>
+    
+    <label for="">Altura</label><br>
+    <input type="text" id="altura"><br><br>
+
+    <label for="">Peso</label><br>
+    <input type="text" id="peso"><br><br>
+
+    <button onclick="verifica();">Verificar Alistamento</button>
+
+    <div>
+        <p id="msg1" style="display: none;"><b>#militar ou #civil</b><br>
+                Com seu peso e altura você <b>PODE</b> se alistar.</p>
+        <p id="msg2" style="display: none;">Com seu peso e altura você <b>NÃO PODE</b> se alistar.</p>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function verifica(){
+        var alt = Number(document.getElementById("altura").value);
+        var peso = Number(document.getElementById("peso").value);
+
+
+        if(alt >= 1.65 && peso >= 70){
+            document.getElementById("msg1").style.display = 'block';
+            document.getElementById("msg2").style.display = 'none';
+        }else{
+            document.getElementById("msg2").style.display = 'block';
+            document.getElementById("msg1").style.display = 'none';
+        }
+    }
+
+</script>

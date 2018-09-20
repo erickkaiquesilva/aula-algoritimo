@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 11</title>
+</head>
+<body>
+    
+
+    <label for="">Salario Bruto de Todos</label><br>
+    <input type="text" id="salario"><br><br>
+
+    <label for="">Quantidade de Pessoa na Casa</label><br>
+    <input type="text" id="pessoas"><br><br>
+
+    <button onclick="verifica();">Verificar Classe Social</button>
+
+    <div id="box" style="display: none;">
+        <p>A renda média é de <b><span id="renda"></span></b> Sua família está na classe <b><span id="classe"></span></b> e faz parte de <b><span id="porcentagem"></span></b> da população.</p>
+    </div>
+</body>
+</html>
+<script>
+
+
+    function verifica(){
+        var salario = Number(document.getElementById("salario").value);
+        var pessoas = Number(document.getElementById("pessoas").value);
+
+        var renda = salario / pessoas;
+        var classe = null;
+        var por = null;
+
+
+        if(renda >= 276.7 || renda <= 484,97){
+            classe = 'E';
+            por = '3%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+        }else if(renda >= 484.97 || renda <= 726.26){
+            classe = 'D';
+            por = '25%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+        }else if(renda >= 726.26 || renda <= 1.195){
+            classe = 'C2';
+            por = '22%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+
+        }else if(renda >= 1.195 || renda <= 2.012){
+            classe = 'C1';
+            por = '21%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+        }else if(renda >= 2.012 || renda <= 3.479){
+            classe = 'B2';
+            por = '15%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+        }else if(renda >= 3.479 || renda <= 6.563){
+            classe = 'B1';
+            por = '9%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+        }else if(renda >= 6.563 || renda <= 9.733){
+            classe = 'A2';
+            por = '4%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+        }else{
+            classe = 'A1';
+            por = '1%';
+            document.getElementById("renda").innerHTML = renda;
+            document.getElementById("porcentagem").innerHTML = por;
+            document.getElementById("classe").innerHTML = classe;
+            document.getElementById("box").style.display = 'block';
+        }
+    }
+
+
+
+</script>
+

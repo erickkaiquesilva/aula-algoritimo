@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    
+    <label for="">Valor Para Cada Um</label><br>
+    <input type="text" id="vlr-grupo"><br><br>
+
+    <label for="">Valor da Pizza</label><br>
+    <input type="text" id="vlr-pizza"><br><br>
+
+    <button onclick="divisao();">Calcular Divisão da Conta</button>
+
+    <div>
+
+        <p id="msg-1" style="display: none;">A pizza pode ser comprada e a contribuição de cada será de <b>R$<span id="vlr-cada"></span></b></p>
+        <p id="msg-2" style="display: none;">Deu ruim! A pizza custa mais que o valor que o KLB pode pagar</p>
+        
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function divisao(){
+        
+        var vlr_grupo = Number(document.getElementById("vlr-grupo").value);
+        var vlr_pizza = Number(document.getElementById("vlr-pizza").value);
+
+        var div = vlr_pizza / 3;
+        
+        div = div.toFixed(2);
+
+        if(div <= vlr_grupo){
+            document.getElementById("vlr-cada").innerHTML = div;
+            document.getElementById("msg-1").style.display = 'block';
+            document.getElementById("msg-2").style.display = 'none';
+        }else{
+            document.getElementById("msg-2").style.display = 'block';
+            document.getElementById("msg-1").style.display = 'none';
+        }
+    }
+
+
+
+</script>

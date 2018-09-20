@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 9</title>
+</head>
+<body>
+    
+
+
+    <label for="">Quantos KM o destinop</label><br>
+    <input type="text" id="km"><br><br>
+
+    <label for="">Valor dos Pedágios</label><br>
+    <input type="text" id="vlr-pedagio"><br><br>
+
+    <label for="">Quantos Pedágio até o destino</label><br>
+    <input type="text" id="pedagio"><br><br>
+
+
+    <button onclick="calc_viagem();">Calcular custo da Viagem</button>
+
+
+    <div id="box" style="display: none;">
+        <h1>Viagem LOKA</h1>
+        <p>Gasto com Gasolina <b >R$ <span id="total-gasolina"></span></b></p>
+        <p id="msgped" style="display: none;">Gasto com Pedagio <b >R$ <span id="total-pedagio"></span></b></p>
+        <p>Gasto Total <b >R$ <span id="total"></span></b></p>
+    </div>
+
+</body>
+</html>
+<script>
+
+    function calc_viagem(){
+
+        var km = Number(document.getElementById("km").value);
+        var vlr_pedagio = Number(document.getElementById("vlr-pedagio").value);
+        var qtd_pedagio = Number(document.getElementById("pedagio").value);
+        
+        var total_gasolina = km * 4.00;
+
+        var total_pedagio = qtd_pedagio * vlr_pedagio;
+
+        var total = total_gasolina + total_pedagio;
+
+        total_gasolina = total_gasolina.toFixed(2);
+        total_pedagio = total_pedagio.toFixed(2);
+        total = total.toFixed(2);
+
+
+        if(qtd_pedagio > 0){
+            document.getElementById("total-gasolina").innerHTML = total_gasolina;
+            document.getElementById("total-pedagio").innerHTML = total_pedagio;
+            document.getElementById("total").innerHTML = total;
+            document.getElementById("msgped").style.display = 'block';
+        }else{
+            document.getElementById("total-gasolina").innerHTML = total_gasolina;
+            document.getElementById("total").innerHTML = total;
+            document.getElementById("msgped").style.display = 'none';
+        }
+        
+        document.getElementById("box").style.display = 'block';
+
+
+    }
+
+
+</script>

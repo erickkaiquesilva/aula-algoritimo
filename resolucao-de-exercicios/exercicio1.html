@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio - 1</title>
+</head>
+<body>
+    
+    <label for="">Nome</label><br>
+    <input type="text" id="name"><br><br>
+    <label for="">Idade</label><br>
+    <input type="text" id="idade"><br><br>
+
+    <button onclick="cumprimentar();">Cumprimentar</button>
+
+
+    <div>
+        <h1>Bem vindo(a), <b id="nome-user"></b></h1>
+        <p id="idade-user" style="display: none;">É uma honra receber alguém da <b>melhor idade!</b></p>
+    </div>
+
+</body>
+</html>
+
+<script>
+
+    function cumprimentar(){
+
+        var name = document.getElementById("name").value;
+        var idade = Number(document.getElementById("idade").value);
+        
+        if(idade >= 60){
+            document.getElementById("nome-user").innerHTML = name;
+            document.getElementById("idade-user").style.display = 'block';
+        }else{
+            document.getElementById("nome-user").innerHTML = name;
+        }
+        
+
+
+    }
+
+
+</script>

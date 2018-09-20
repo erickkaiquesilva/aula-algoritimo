@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    
+    <label for="">Preço Pizza</label><br>
+    <input type="text" id="preco-pizza"><br><br>
+
+    <label for="">Tempo de Entrega</label><br>
+    <input type="text" id="time"><br><br>
+
+    <button onclick="verifica();">Analisar Pizza</button>
+
+    <div>
+        <p id="msg1" style="display: none;"><b>#pedepizza #tentaoutra</b><br>
+            Essa pizza você <b>PODE</b> pedir.</p>
+        <p id="msg2" style="display: none;">Essa pizza você <b>NÃO PODE</b> pedir.</p>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function verifica(){
+        var preco = Number(document.getElementById("preco-pizza").value);
+        var time = Number(document.getElementById("time").value);
+
+
+        if(preco <= 50 && time <= 35){
+            document.getElementById("msg1").style.display = 'block';
+            document.getElementById("msg2").style.display = 'none';
+        }else{
+            document.getElementById("msg2").style.display = 'block';
+            document.getElementById("msg1").style.display = 'none';
+        }
+    }
+
+</script>

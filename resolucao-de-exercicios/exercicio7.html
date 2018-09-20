@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    
+    <label for="">Informe um Número</label><br>
+    <input type="text" id="number"><br><br>
+
+    <button onclick="verifica();">Deu TOC</button>
+
+    <div>
+        <p id="msg1" style="display: none;"><b>Vixe, sai e perto que lá vem o chilique!</b></p>
+        <p id="msg2" style="display: none;"><b>Ufa... número de boa!</b></p>
+    </div>
+</body>
+</html>
+
+<script>
+
+    function verifica(){
+        var num = Number(document.getElementById("number").value);
+
+
+        if(num === 6 || num === 9){
+            document.getElementById("msg1").style.display = 'block';
+            document.getElementById("msg2").style.display = 'none';
+        }else{
+            document.getElementById("msg2").style.display = 'block';
+            document.getElementById("msg1").style.display = 'none';
+        }
+    }
+
+</script>
