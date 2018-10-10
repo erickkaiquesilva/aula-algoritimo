@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio Votos</title>
+</head>
+<body>
+
+    <div class="box-final">
+        <h1>Resultado Elições 2018</h1>
+
+        <p><span>Taylor Swift total de votos</span> <span id="voto_um"></span></p>
+        <p><span>Justin Biber total de votos</span> <span id="voto_dois"></span></p>
+        <p><span>Nulos</span> <span id="voto_nulo"></span></p>
+
+        <p><span id="vencedor"></span></p>
+    </div>
+    
+</body>
+</html>
+<script>
+
+    var voto_um = 0;
+    var voto_dois = 0;
+    var nulor = 0;
+    var armazena = new Array();
+    var msg;
+
+    var i = 0;
+
+    while(i < 10){
+        var votar = Number(prompt("Qual o número do seu candidado?"));
+        armazena.push(votar);
+
+        console.log(armazena);
+        i++;
+    }
+    
+    for(var a; a < 10; a++){
+        switch(vetor[a]){
+            case 17:
+                voto_um++;
+                break;
+            case 13:
+                voto_dois++;
+                break;
+            default:
+                nulo++;
+                break;
+        }
+    }
+
+    if(voto_um > voto_dois){
+        msg = "O candidato Jair Bolsonaro é o novo Presidente da República Federativa do Brasil";
+        document.getElementById("voto_um").innerHTML = voto_um;
+        document.getElementById("voto_dois").innerHTML = voto_dois;
+        document.getElementById("voto_nulo").innerHTML = voto_nulo;
+        document.getElementById("vencedor").innerHTML = msg;
+
+    }else if(voto_dois > voto_um){
+        msg = "O candidato Fernando Haddad é o novo Presidente da República Federativa do Brasil";
+        document.getElementById("voto_um").innerHTML = voto_um;
+        document.getElementById("voto_dois").innerHTML = voto_dois;
+        document.getElementById("voto_nulo").innerHTML = voto_nulo;
+        document.getElementById("vencedor").innerHTML = msg;
+    }else{
+        msg = "As Eleições a Presidente deu Empate é necessário um Segundo Turno";
+        document.getElementById("voto_um").innerHTML = voto_um;
+        document.getElementById("voto_dois").innerHTML = voto_dois;
+        document.getElementById("voto_nulo").innerHTML = voto_nulo;
+        document.getElementById("vencedor").innerHTML = msg;
+    }
+
+</script>

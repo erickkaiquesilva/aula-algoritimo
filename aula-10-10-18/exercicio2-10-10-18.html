@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<script>
+
+    var vetor = new Array();
+    var z = 0;
+    var x = 0;
+    var nulo = 0;
+
+    var i = 0;
+
+    while (i < 10) {
+        var voto = Number(prompt("Informe o número do candidado"));
+
+        vetor.push(voto);
+
+        console.log(vetor);
+
+        i++;
+    }
+
+    for(var a = 0; a < 10; a++){
+        switch(vetor[a]){
+            case 1:
+                z++;
+                break;
+            case 2:
+                x++;
+                break;
+            default:
+                nulo++;
+                break;
+
+        }
+    }
+
+    if( z > x){
+        alert("o candidado Z ganhou");
+        document.write(`O candidado Z venceu, teve um total de ${z} votos<br><br> contra ${x} do outro e o total de votos nulos foi ${nulo}`);
+    }else if(x > z){
+        alert("O candidado X ganhou");
+        document.write(`O candidado Z teve um total de ${x}, contra ${z} do outro e o total de votos nulos foi ${nulo}`);
+    }else{
+        alert("Empate");
+        document.write(`Os candidatos Z e X empataram o Z teve ${z}, e o X teve ${x}, o total de nulos foi de ${nulo}`);
+    }
+
+
+
+
+</script>

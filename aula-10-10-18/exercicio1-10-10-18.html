@@ -1,0 +1,41 @@
+<meta charset="utf-8">
+<script>
+
+    var filhos = Number(prompt("Quantos Filhos você tem"));
+    var msg;
+    var verifica;
+
+    verifica = filhos < 0 ? false : true;
+
+    console.log(verifica);
+    console.log(filhos);
+
+
+    if(verifica){
+        switch (filhos){
+            case 0:
+                msg = "Tem TV, internet e videogame";
+                break;
+            case 1:
+                msg = "Tem TV e internet mas não videogame";
+                break;
+            case 2:
+                msg = "Tem TV mas não tem internet e videogame";
+            case 3:
+                msg = "Não tem nem TV nem internet e nem videogame";
+                break;
+            default:
+                msg = "É demais";
+        }
+
+        alert(msg);
+    }else{
+
+        msg = "Valor Inválido";
+        alert(msg);
+
+    }   
+
+   
+
+</script>
