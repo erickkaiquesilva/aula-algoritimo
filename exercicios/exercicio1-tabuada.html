@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tabuada - Exercicio</title>
+</head>
+
+<body>
+
+    <label for="">Qual a Tabuada deseja descobrir?</label>
+    <br>
+    <input type="text" id="tabuada" />
+    <br>
+    <br>
+
+    <button onclick="tabuada();">Descobrir Tabuada</button>
+
+
+</body>
+
+</html>
+<script>
+
+
+    function tabuada() {
+        var tabuada = Number(document.getElementById("tabuada").value);
+        var somador = 0;
+        var resultado;
+        var i = 0;
+        
+        while(i <= 9)/* Enquanto i for menor ou igual a 9, ele ficara fazendo a incrementação, caso chega em nove, para. */{
+
+            
+            i++; // Contador i é incrementado sempre mais 1 a ele.
+            resultado = tabuada * i; // váriavel resultado esta recebendo o valor da tabuada que o usuário deseja descobrir vezes o número que esta do i incrementado
+            document.write(`${i} X ${tabuada} = ${resultado}<br>`); //exibindo o resultado da tabuada.            
+        }   
+
+    }
+
+
+</script>

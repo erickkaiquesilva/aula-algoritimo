@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Voto </title>
+    <style>
+        .box-resultado{margin: 0 auto; padding: 15px; background: #dada62; width: 70%;}    
+        .box-resultado h1{font-weight: bold; color: #fff; text-transform: uppercase;}
+    </style>
+</head>
+<body>
+    <div class="box-resultado">
+        <h1>Resultados das Eleições</h1>
+
+        <ul>
+            <li><p>Votos Primeiro Candidado <span id="vts-primeito-candidato"></span></p></li>
+            <li><p>Votos Segundo Candidato <span id="vts-segundo-candidado"></span></p></li>
+            <li><p>Votos Validos <span id="vts-validos"></span></p></li>
+            <li><p>Votos Nulos <span id="vts-nulos"></span></p></li>
+            <li><p>Votos Brancos <span id="vts-branco"></span></p></li>
+        </ul>
+
+        <div id="winner" style"display:block;">
+            <p>O vencedor das Eleições 2018 <span id="vencedor"></span>.O mais novo Presidente da República Federativa do Brasil é</p>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+
+    var banco = new Array();
+    var msg;
+    var candidatoUm = 0;
+    var candidatoDois = 0;
+    var nulo = 0;
+    var branco = 0;
+    
+    var i = 0;
+
+    while(i < 10){
+        var voto = Number(prompt("Qual o número do seu candidado?"));
+
+        banco.push(voto);
+
+        console.log(banco);
+
+        i++;
+    }
+
+    for(var a = 0; a < 10; a++){
+        switch(banco[a]){
+            case 13:
+                candidatoUm++;
+                break;
+            case 17:
+                candidatoDois++;
+                break;
+            case 0:
+                branco++;
+                break;
+            default:
+                nulo++;
+                break;            
+        }
+    }
+
+
+    if(candidatoUm > candidatoDois){
+        msg = "Candidato Um Ganhou";
+        alert(msg);
+        
+        var validos = candidatoUm + candidatoDois;
+
+        document.getElementById("vts-primeito-candidato").innerHTML = candidatoUm;
+        document.getElementById("vts-segundo-candidado").innerHTML = candidatoDois;
+        document.getElementById("vts-validos").innerHTML = validos;
+        document.getElementById("vts-nulos").innerHTML = nulo;
+        document.getElementById("vts-branco").innerHTML = branco;
+
+        documente.getElementById("vencedor").innerHTML = "é Fernanco Haddad";
+        
+    }else if(candidatoDois > candidatoUm){
+        msg = "Candidato Dois Ganhou";
+        alert(msg);
+
+        var validos = candidatoUm + candidatoDois;
+
+        document.getElementById("vts-primeito-candidato").innerHTML = candidatoUm;
+        document.getElementById("vts-segundo-candidado").innerHTML = candidatoDois;
+        document.getElementById("vts-validos").innerHTML = validos;
+        document.getElementById("vts-nulos").innerHTML = nulo;
+        document.getElementById("vts-branco").innerHTML = branco;
+
+        documente.getElementById("vencedor").innerHTML = "é Jair Bolsonaro";
+
+    }else{
+        msg = "Ops Tem a Necessidade de Ir para um segundo turno";
+        alert("");
+
+        var validos = candidatoUm + candidatoDois;
+
+        document.getElementById("vts-primeito-candidato").innerHTML = candidatoUm;
+        document.getElementById("vts-segundo-candidado").innerHTML = candidatoDois;
+        document.getElementById("vts-validos").innerHTML = validos;
+        document.getElementById("vts-nulos").innerHTML = nulo;
+        document.getElementById("vts-branco").innerHTML = branco;
+
+        documente.getElementById("winner").style.display = "none";
+    }
+
+</script>
