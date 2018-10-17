@@ -1,0 +1,28 @@
+<meta charset="utf-8">
+<script>
+
+    var qtd_amigos = Number(prompt("Quantos Amigos vão comer a pizza? "));
+    var time = Number(prompt("Tempo de entrega?"));
+    var preco = Number(prompt("Qual o valor da pizza?"));
+
+    function validaPedido(qtd_amigos, time, preco) {
+
+        var valorOK = (preco / qtd_amigos) <= 25;
+
+        var tempoOK = time <= 45;
+
+        return valorOK && tempoOK;
+
+    }
+
+    var podePedir = validaPedido(qtd_amigos, time, preco);
+
+    if (podePedir) {
+        alert("Aí sim #pedirpizza!");
+    } else {
+        alert("Xi... #deuruim");
+    }
+
+
+    console.log(podePedir);
+</script>

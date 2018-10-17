@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    
+    
+        <label for="">Informe o id</label><br>
+        <input type="text" id="identicador"><br><br>
+
+        <button onclick="mostrar();">Mostrar</button> <button onclick="ocultar();">Esconder</button>
+    
+
+
+    <div id="box1" style="display: none;">Você clicou no botão Mostrar</div><br>
+
+    <div id="box2" style="display: none;">Caixa 2</div><br>
+
+    <div id="box3" style="display: none;">Usa JQuery BB</div><br>
+</body>
+</html>
+<script>
+
+    function mostrar(){
+        var id = document.getElementById("identicador").value;
+        
+        visibilidade(id,true);
+    }
+
+    function ocultar(){
+        var id = document.getElementById("identicador").value;
+
+        visibilidade(id, false);
+    }
+
+    function visibilidade(id, visivel){
+        var view = visivel ? 'block' : 'none';
+        document.getElementById(id).style.display = view;
+    }
+
+</script>

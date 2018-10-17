@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script>
+
+    var salarioBrunto = Number(prompt("Informe seu salario queridu? "));
+
+    function inss(salarioBrunto){
+         var inss = salarioBrunto * 0.10;
+         return inss;
+    }
+
+    function ir(salarioBrunto){
+        var ir = 0;
+
+        if(salarioBrunto < 1000){
+            ir = 0;
+        }else if(salarioBrunto > 1000 && salarioBrunto < 2000){
+            ir = salarioBrunto * 0.07;
+        }else{
+            ir = salarioBrunto * 0.15;
+        }
+        return ir;
+    }
+
+    function vt(salarioBrunto){
+        var vt = salarioBrunto * 0.05;
+        return vt;
+    }
+
+    var inss = inss(salarioBrunto);
+    var ir = ir(salarioBrunto);
+    var vt = vt(salarioBrunto); 
+
+    var salarioLiquido = salarioBrunto - inss - ir - vt;
+
+    inss = inss.toFixed(2);
+    ir = ir.toFixed(2);
+    vt = vt.toFixed(2);
+    salarioBrunto = salarioBrunto.toFixed(2);
+    salarioLiquido = salarioLiquido.toFixed(2);
+
+    document.write(`Salário Bruto: R$${salarioBrunto}<br>INSS: R$${inss}<br> Imposto Renda: R$${ir}<br>Vale Transporte: ${vt}`);
+</script>

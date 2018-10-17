@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<script>
+    /* 
+        Pergunte ao usuário, quantos filhos ele tem
+        Calcule então sua bolsa familia
+        Considere que a bolsa é de 20,00 por filho
+    */
+
+    function auxilio(filhos){
+        if(filhos < 0){
+            return false;
+        }
+        var bolsa = filhos * 20;
+        return bolsa;
+    }
+
+   var numberFihos = Number(prompt("Informe o total de filhos"));
+
+   fun = auxilio(numberFihos);
+
+    
+
+   console.log(fun);
+
+   function valida(fun){
+
+       if(fun > 30 && fun < 60){
+           fun = fun + 100;
+       }else if(fun > 60 && fun < 100){ 
+           fun = fun + 80;
+       }else{
+           fun = fun + 60;
+       }
+
+       return fun;
+   }
+
+   var result = valida(fun); 
+   
+   console.log(result);
+    
+</script>
