@@ -1,0 +1,31 @@
+<meta charset="utf-8">
+<script>
+
+    var numBala = Number(prompt("Quantas balas você deu a criança"));
+    var i = 0;
+    var msg = "buáaa";
+    var bua = 0;
+
+
+    if(numBala == 0){
+        bua = 10;
+        
+    }else if(numBala >= 1 && numBala <=3){
+        bua = 7;
+    }else if(numBala >= 4 && numBala <= 6){
+        bua = 3;
+    }else if(numBala > 7){
+        alert("O BEBE Não CHOROU");
+    }
+
+    baby(i, msg, bua);
+
+    function baby(i, msg, bua){
+        while(i < bua){
+            document.write(msg+"<br>");
+            i++;
+        }
+    }
+
+
+</script>
