@@ -1,47 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mercearia - Exercicio 1</title>
 </head>
-<body>
-    
 
-    <label for="">Quantidade Produtos</label><br>
-    <input type="text" id="QtdProd"><br><br>
+<body>
+
+
+    <label for="">Quantidade Produtos</label>
+    <br>
+    <input type="text" id="QtdProd">
+    <br>
+    <br>
     <button onclick="cadastrar();">Cadastrar Produto</button>
 
 
 </body>
+
 </html>
 <script>
 
 
     //Função que recebe e Valida a entrada de dados
-    function cadastrar(){
-        
+    function cadastrar() {
+
         // Variavel que armazena quantidade de produtos
         var Qtd = Number(document.getElementById("QtdProd").value);
-        
+
         //variavel que recebe um boolean True ou False para saber se a váriavel esta vazia ou preenchida
         var valida = Qtd > 0 ? true : false;
 
         //Definindo ações a ser tomada caso a varivel estaja preechida ou Não
-        if(valida){
+        if (valida) {
             //enviando informações para a função que cria a lista, caso a váriavel esteja preenchida
             lista(Qtd);
-        }else{
-            
+        } else {
+
         }
- 
+
     }
 
 
     // Função responsavel por pedir informações do produtos que deseja cadastrar
-    function lista(QtdProd){
-        
+    function lista(QtdProd) {
+
 
         // Variavel contadora
         var i = 0;
@@ -50,21 +56,47 @@
         var vlrUni;
         var uniVenda;
         var totalEstoque;
-        
+
 
         // Estrutura de repetição que define que enquanto i for diferente de QtdProd continua pedindo as informações 
         // Caso contrario para.
-        while(i != QtdProd){
+
+        while (i != QtdProd) {
             i++;
             nomeProd = prompt(`Nome do Produto ${i}º`);
             vlrUni = prompt("Valor da Unidade");
             uniVenda = prompt("Unidade de Venda: (Kg, Uni, Litros, etc...)");
             totalEstoque = prompt("Quantidade em Estoque");
-            
-            console.log(i,QtdProd);
-            
+
+            var v = validacao(nomeProd);            
+
         };
 
+
+        console.log(v);
+
+    }
+
+    // Validação das informações informadas
+    function validacao(nomeProd, vlrUni, uniVenda, totalEstoque) {
+
+
+        var valida = nomeProd.length < 2 ? false : true;
+
+        // Variaveis que recebe a verificação exigidas no produto
+        if(valida){
+            do{
+                nomeProd = prompt("Preencha este campo é obrigatório");
+            }while(valida != false);
+        }else{
+            return true;
+        }
+
+        console.log(valida);
+
+
+
+        console.log(nomeProd.length);
     }
 
 
