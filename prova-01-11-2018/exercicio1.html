@@ -68,7 +68,7 @@
             uniVenda = prompt("Unidade de Venda: (Kg, Uni, Litros, etc...)");
             totalEstoque = prompt("Quantidade em Estoque");
 
-            var v = validacao(nomeProd);            
+            var v = validacao(nomeProd, uniVenda, vlrUni, totalEstoque);            
 
         };
 
@@ -78,25 +78,25 @@
     }
 
     // Validação das informações informadas
-    function validacao(nomeProd, vlrUni, uniVenda, totalEstoque) {
+    function validacao(nomeProd, uniVenda, vlrUni, totalEstoque) {
 
-
-        var valida = nomeProd.length < 2 ? false : true;
-
-        // Variaveis que recebe a verificação exigidas no produto
-        if(valida){
+        
+        if(nomeProd.length < 2){
             do{
-                nomeProd = prompt("Preencha este campo é obrigatório");
-            }while(valida != false);
-        }else{
-            return true;
+                nomeProd = prompt(`É necessário informa o nome do Produto`);
+            }while(nomeProd.length < 2);
+        }else if(uniVenda.length < 1){
+            do{
+                uniVenda = prompt("É necessário informa o Unidade de Venda do Produto");
+            }while(uniVenda.length < 1);
+        }else if(vlrUni <= 0 ){
+            do{
+                vlrUni = prompt("É necessário informa o Unidade de Venda do Produto");
+            }while(vlrUni <= 0);
         }
+        
 
-        console.log(valida);
-
-
-
-        console.log(nomeProd.length);
+        console.log(uniVenda.length);
     }
 
 
