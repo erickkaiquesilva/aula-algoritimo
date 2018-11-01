@@ -19,6 +19,17 @@
     <button onclick="cadastrar();">Cadastrar Produto</button>
 
 
+    <button onclick="relatorio()" style="display: none;" id="btnRelatorio">Mostrar Relatório</button>
+
+    <div id="list" style="display: none;">
+        <h1>Relatorio do Estoque</h1>
+        <div id="rela">
+            <p>Total de itens no estoque: <span id="totEstoque"></span></p>
+            <p>Valor em Estoque R$<span id="vlrEstoque"></span></p>
+        </div>
+    </div>
+
+
 </body>
 
 </html>
@@ -57,6 +68,11 @@
         var uniVenda;
         var totalEstoque;
 
+        var caro;
+        var barato;
+
+        var soma1 = 0;
+        var soma2 = 0;
 
         // Estrutura de repetição que define que enquanto i for diferente de QtdProd continua pedindo as informações 
         // Caso contrario para.
@@ -64,40 +80,77 @@
         while (i != QtdProd) {
             i++;
             nomeProd = prompt(`Nome do Produto ${i}º`);
-            vlrUni = prompt("Valor da Unidade");
+            vlrUni = Number(prompt("Valor da Unidade"));
             uniVenda = prompt("Unidade de Venda: (Kg, Uni, Litros, etc...)");
-            totalEstoque = prompt("Quantidade em Estoque");
+            totalEstoque = Number(prompt("Quantidade em Estoque"));
+            
+            soma1 += vlrUni;
 
-            var v = validacao(nomeProd, uniVenda, vlrUni, totalEstoque);            
+            soma2 += totalEstoque;
+            
+            
+            var v = validacao(nomeProd, vlrUni, uniVenda, totalEstoque);
 
         };
+        
+        soma1 = soma1.toFixed(2);
+        
+        document.getElementById("btnRelatorio").style.display = 'block';
 
 
-        console.log(v);
+        document.getElementById("vlrEstoque").innerHTML =  soma1;
+        document.getElementById("totEstoque").innerHTML =  soma2;
+
+        
+        
 
     }
 
     // Validação das informações informadas
-    function validacao(nomeProd, uniVenda, vlrUni, totalEstoque) {
+    function validacao(nomeProd, vlrUni, uniVenda, totalEstoque) {
 
-        
-        if(nomeProd.length < 2){
-            do{
+
+        if (nomeProd.length < 2) {
+
+            do {
                 nomeProd = prompt(`É necessário informa o nome do Produto`);
-            }while(nomeProd.length < 2);
-        }else if(uniVenda.length < 1){
-            do{
-                uniVenda = prompt("É necessário informa o Unidade de Venda do Produto");
-            }while(uniVenda.length < 1);
-        }else if(vlrUni <= 0 ){
-            do{
-                vlrUni = prompt("É necessário informa o Unidade de Venda do Produto");
-            }while(vlrUni <= 0);
-        }
-        
+            } while (nomeProd.length < 2);
 
-        console.log(uniVenda.length);
+        }else{
+            return nomeProd;
+        }
+
+        if (vlrUni <= 0) {
+
+            do {
+                vlrUni = Number(prompt("É necessário informa o Valor Unitário"));
+            } while (vlrUni <= 0);
+        }else{
+            return vlrUni;
+        }
+
+        if (uniVenda.length < 1) {
+
+            do {
+                uniVenda = prompt(`É necessário Informa a unidade de Venda`);
+            } while (uniVenda.length < 2);
+
+        }else{
+            return uniVenda;
+        }
+
+        if (totalEstoque <= 0) {
+
+            do {
+                totalEstoque = Number(prompt("É necessário informa o total que tem em Estoque"));
+            } while (totalEstoque <= 0);
+        }else{
+            return totalEstoque;
+        }
     }
 
+    function relatorio(){
+        document.getElementById("list").style.display = 'block';
+    }
 
 </script>
