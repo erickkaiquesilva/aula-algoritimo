@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mercearia - Exercicio 1</title>
+</head>
+<body>
+    
+
+    <label for="">Quantidade Produtos</label><br>
+    <input type="text" id="QtdProd"><br><br>
+    <button onclick="cadastrar();">Cadastrar Produto</button>
+
+
+</body>
+</html>
+<script>
+
+
+    //Função que recebe e Valida a entrada de dados
+    function cadastrar(){
+        
+        // Variavel que armazena quantidade de produtos
+        var Qtd = Number(document.getElementById("QtdProd").value);
+        
+        //variavel que recebe um boolean True ou False para saber se a váriavel esta vazia ou preenchida
+        var valida = Qtd > 0 ? true : false;
+
+        //Definindo ações a ser tomada caso a varivel estaja preechida ou Não
+        if(valida){
+            alert("FOI");
+        }else{
+            alert("OPS");
+        }
+         
+        console.log(valida);
+ 
+    }
+
+
+</script>
