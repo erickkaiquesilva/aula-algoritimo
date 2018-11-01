@@ -42,21 +42,28 @@
     // Função responsavel por pedir informações do produtos que deseja cadastrar
     function lista(QtdProd){
         
+
+        // Variavel contadora
         var i = 0;
+        // Variaveis que armazena os dados dos produtos
         var nomeProd;
         var vlrUni;
         var uniVenda;
         var totalEstoque;
+        
 
-        do{
-            nomeProd = prompt("Nome do Produto 1º");
+        // Estrutura de repetição que define que enquanto i for diferente de QtdProd continua pedindo as informações 
+        // Caso contrario para.
+        while(i != QtdProd){
+            i++;
+            nomeProd = prompt(`Nome do Produto ${i}º`);
             vlrUni = prompt("Valor da Unidade");
             uniVenda = prompt("Unidade de Venda: (Kg, Uni, Litros, etc...)");
             totalEstoque = prompt("Quantidade em Estoque");
-            i = i + 1;
-        }while(i == QtdProd);
-
-        console.log(i,QtdProd);
+            
+            console.log(i,QtdProd);
+            
+        };
 
     }
 
