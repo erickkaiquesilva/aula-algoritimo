@@ -30,13 +30,34 @@
 
         //Definindo ações a ser tomada caso a varivel estaja preechida ou Não
         if(valida){
-            alert("FOI");
+            //enviando informações para a função que cria a lista, caso a váriavel esteja preenchida
+            lista(Qtd);
         }else{
-            alert("OPS");
+            
         }
-         
-        console.log(valida);
  
+    }
+
+
+    // Função responsavel por pedir informações do produtos que deseja cadastrar
+    function lista(QtdProd){
+        
+        var i = 0;
+        var nomeProd;
+        var vlrUni;
+        var uniVenda;
+        var totalEstoque;
+
+        do{
+            nomeProd = prompt("Nome do Produto 1º");
+            vlrUni = prompt("Valor da Unidade");
+            uniVenda = prompt("Unidade de Venda: (Kg, Uni, Litros, etc...)");
+            totalEstoque = prompt("Quantidade em Estoque");
+            i = i + 1;
+        }while(i == QtdProd);
+
+        console.log(i,QtdProd);
+
     }
 
 
