@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio - 1</title>
+</head>
+
+<body>
+    <p>Digite CPF</p>
+    <br>
+    <input type="text" id="cpf" />
+    <button onclick="valida();">Validar</button>
+</body>
+
+</html>
+<script>
+
+    let nome = "Erick Silva";
+    let ocorrencia;
+    let conta = 0;
+
+
+    for (var i = 0; i < nome.length; i++) {
+        ocorrencia = nome[i];
+        if (ocorrencia == 'i') {
+            conta++;
+        }
+    }
+
+    function valida() {
+
+        var ncpf = document.getElementById("cpf").value;
+        var tamanho = ncpf.length;
+        var conta1 = 0;
+        var soma1 = 0;
+        var resto1 = 0;
+
+        if (ncpf.length != 11) {
+            alert("CPF INVÁLIDO");
+        } else {
+
+            for (i = 0; i < ncpf.length; i++) {
+                conta1 = conta1 + Number(ncpf[i-1, i] * 11 - i);
+            }
+
+            resto1 = (conta1 * 11) % 10;
+            
+            if(ncpf[tamanho - 2] == resto1){
+                alert("O número é igua á" + resto1);
+            }else{
+                alert("Inválido");
+            }
+            console.log(resto1)
+            
+
+            
+
+
+
+        }
+
+
+
+    }
+
+
+</script>
